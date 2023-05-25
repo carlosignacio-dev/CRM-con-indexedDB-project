@@ -1,16 +1,19 @@
 
 (function() {
+
     let DB;
+    
     document.addEventListener('DOMContentLoaded', () => {
         createDB();
     });
         //Crea la base de datos de indexDB
         function createDB() {
+
             //Se abre la conexion de la base de datos
             const crearDB = window.indexedDB.open("crm", 1);
 
             crearDB.onerror = function() {
-                console.error("Error");
+                console.error("Hubo un error");
             };
 
             crearDB.onsuccess = function() {
